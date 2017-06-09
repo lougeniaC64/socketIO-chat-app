@@ -1,9 +1,4 @@
-// <ul id="messages"></ul>
-// <form action="">
-//   <input id="m" autocomplete="off" /><button>Send</button>
-// </form>
-// <!-- <script src="/socket.io/socket.io.js"></script> -->
-// <!-- <script src="https://code.jquery.com/jquery-1.11.1.js"></script> -->
+
 // <script>
 //   $(function () {
 //     var socket = io()
@@ -17,19 +12,29 @@
 //     })
 //   })
 // </script>
-
 import React from 'react'
 import io from 'socket.io'
 
 let socket = io()
 
 export default class Messages extends React.Component {
+  constructor() {
+    super()
+  }
+
+  // sendMessage(e) => {
+  //   console.log(e)
+  //   // socket.emit('chat message', e.)
+  // }
+
   render() {
     return (
-      <ul id="messages"></ul>
-      <form action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-      </form>
+      <div>
+        <ul id="messages"></ul>
+        <form action="">
+          <input id="m" autocomplete="off" /><button>Send</button>
+        </form>
+      </div>
     )
   }
 }
